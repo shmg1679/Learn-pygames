@@ -54,13 +54,13 @@ def enemy(x, y):
     # in other words, it draws the image in the specified pixels on the screen
     # Syntax : blit(source, destination, area=None, special_flags=0) -> Rect
     screen.blit(enemyImg, (x, y))
-    pygame.draw.rect(enemyImg, (255,255,255), enemy_hitbox, 4)
+    # pygame.draw.rect(enemyImg, (255,255,255), enemy_hitbox, 4)
 
 def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
     screen.blit(bulletImg, (x+16, y+10))
-    pygame.draw.rect(bulletImg, (255,255,255), bullet_hitbox, 4)
+    # pygame.draw.rect(bulletImg, (255,255,255), bullet_hitbox, 4)
 
 
 def collision_triggered(enemy_cord_x, enemy_cord_y, bullet_cord_x, bullet_cord_y):
@@ -79,8 +79,6 @@ def collision_triggered(enemy_cord_x, enemy_cord_y, bullet_cord_x, bullet_cord_y
             print(bullet_cord_y, " ", enemy_cord_y)
             print(bullet_cord_x, " ", enemy_cord_x, " ", enemy_cord_x+64)
             return True
-        else:
-            return False
     else:
         return False
         
